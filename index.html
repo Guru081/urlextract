@@ -6,8 +6,16 @@
 <input oninput="onHandleChange(this)" name="urlPaste" type="text"/>
 <button  onclick="onHandleExtract()">extract</button>
 <div id="uid"></div>
+  <iframe id="report"
+    title="Inline Frame Example"
+    width="300"
+    height="200"
+   >
+</iframe>
+
 <script>
 var str="";
+  var b="";
 var onHandleChange=(obj)=>{
   str=obj.value
   
@@ -16,6 +24,7 @@ var onHandleExtract=()=>{
   const words = str.split('/');
   b=words[6]
   document.getElementById('uid').innerHTML=b&&`Report ID - `+b;
+  document.getElementById('report').src=str
 }
 
 </script>
